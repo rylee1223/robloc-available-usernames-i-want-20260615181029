@@ -1,0 +1,154 @@
+/* -------------------------------------------------
+   Robl​oc Username Availability Checker – Styles
+   Dark mode is the default theme.
+   ------------------------------------------------- */
+
+/* CSS Custom Properties (variables) */
+:root {
+    --color-bg: #121212;
+    --color-surface: #1e1e1e;
+    --color-primary: #0db9d7;
+    --color-primary-light: #34c9e4;
+    --color-text: #e0e0e0;
+    --color-muted: #a0a0a0;
+    --radius: 8px;
+    --transition: 0.3s ease;
+    --font-sans: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 100%; /* 16px */
+}
+body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Layout */
+.site-header,
+.site-footer {
+    background: var(--color-surface);
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+.site-header h1 {
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+.container {
+    flex: 1;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+.checker {
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform var(--transition);
+}
+.checker:hover {
+    transform: translateY(-2px);
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+label {
+    font-weight: 600;
+    color: var(--color-primary-light);
+}
+input[type="text"] {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--color-muted);
+    border-radius: var(--radius);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 1rem;
+    transition: border-color var(--transition);
+}
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+button {
+    align-self: flex-start;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background var(--transition), transform var(--transition);
+}
+button:hover,
+button:focus {
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+/* Results */
+.results {
+    margin-top: 2rem;
+}
+.results h2 {
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+.results ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.5rem;
+}
+.results li {
+    background: var(--color-bg);
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+    border: 1px solid var(--color-muted);
+}
+
+/* Utility */
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .checker {
+        padding: 1.5rem;
+    }
+    button {
+        width: 100%;
+    }
+}
+
+/* Footer */
+.site-footer p {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+}
+
+/* Smooth scroll for in‑page links (future‑proof) */
+html {
+    scroll-behavior: smooth;
+}
