@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robl​oc Username Availability Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>Robl​oc Username Availability</h1>
+        <p>Enter a keyword and discover available usernames.</p>
+    </header>
+
+    <main class="container">
+        <section class="checker">
+            <form id="usernameForm" autocomplete="off">
+                <label for="keyword">Keyword</label>
+                <input type="text" id="keyword" name="keyword" placeholder="e.g., tech, gamer, pro" required>
+                <button type="submit">Find Available Users</button>
+            </form>
+
+            <div id="results" class="results hidden" aria-live="polite">
+                <h2>Available usernames</h2>
+                <ul id="userList"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Robl​oc. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
